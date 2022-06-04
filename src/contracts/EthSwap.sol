@@ -12,15 +12,18 @@ contract EthSwap {
         address token,
         uint256 amount,
         uint256 rate
-        );
+    );
 
     constructor(Token _token) public {
         token = _token;
     }
-    
+
     function buyTokens() public payable {
         //Calculate the number of tokens to buy
         uint256 tokenAmount = msg.value * rate;
+
+        require(token.balanceOf(address(this)) >= tokenAmount);
+
         token.transfer(msg.sender, tokenAmount);
 
         //Emit an event
