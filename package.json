@@ -50,7 +50,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier:solidity"
+      "pre-commit": "npm run prettier:solidity",
+      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
+      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
+      "post-applypatch": "echo \"[Husky] post-applypatch\"",
+      "pre-commit": "echo \"[Husky] pre-commit\""
     }
   }
 }
