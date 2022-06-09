@@ -22,8 +22,8 @@ contract Token {
     }
 
     function transfer(address _to, uint256 _value)
-        public
-        returns (bool success)
+    public
+    returns (bool success)
     {
         require(balanceOf[msg.sender] >= _value);
         balanceOf[msg.sender] -= _value;
@@ -33,8 +33,8 @@ contract Token {
     }
 
     function approve(address _spender, uint256 _value)
-        public
-        returns (bool success)
+    public
+    returns (bool success)
     {
         allowance[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
